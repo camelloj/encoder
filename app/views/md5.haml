@@ -1,0 +1,10 @@
+.container
+  %h1 MD5
+  %form{:action => "/md5_1", :method => "post"}
+    %legend
+      Generator md5 code
+    %p
+      %label{:for => ""} Writte your string
+      %input{:type => "textbox", :name => "string_code", :id => "string_code"}
+    %p
+      %input{:type => "submit", :value => "Go!!!"}

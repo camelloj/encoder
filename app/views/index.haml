@@ -1,0 +1,17 @@
+.container
+  %h1 Generator
+  %p= Time.now
+  .nav-collapse.collapse
+    %ul.nav
+      %li.active
+        %a{:href => "/guid"} GUID
+      %li
+        %a{:href => "/md5"} MD5
+      %li
+        %a{:href => "/sha1"} SHA1
+      %li
+        %a{:href => "/sha1+md5"} SHA1 + MD5
+      %li
+        %a{:href => "/md5+sha1"} MD5 + SHA1
+  / /.nav-collapse
+  
