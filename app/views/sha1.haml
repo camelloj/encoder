@@ -1,10 +1,33 @@
 .container
   %h1 SHA1
-  %form{:action => "/sha1_1", :method => "post"}
-    %legend
-      Generator sha1 code
-    %p
-      %label{:for => ""} Writte your string
-      %input{:type => "textbox", :name => "string_code", :id => "string_code"}
-    %p
-      %input{:type => "submit", :value => "Go!!!"}
+  
+  %legend
+    Generator sha1 code
+  %p
+    %label{:for => ""} Writte your string
+    %input{:type => "textbox", :name => "string_code", :id => "string_code"}
+
+    %button Generate
+    :javascript
+      $(document).ready(function(){
+        $("button").click(function(){
+          var string=$("#string_code").val();
+          var lenght=string.length;
+          if(lenght > 0)
+            $.ajax(
+                {
+                  method:"POST",
+                  url:"/sha1_1",
+                  data:{string_code:$("#string_code").val()
+                },
+                success:function(result){
+                  $("#div1").html(result);
+                },
+                error:function(){
+                  $("#div1").html("Error");
+                }
+            });
+
+        });
+      });
+  #div1

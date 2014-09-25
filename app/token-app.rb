@@ -42,11 +42,11 @@ module Token
     end
 
     post '/sha1_md5' do
-      haml :sha1_md5_show, :locals => {:sha1_md5_code => Digest::SHA1.hexdigest(Digest::MD5.hexdigest(params["string_code"]))}
+      haml :sha1_md5_show, :locals => {:sha1_md5_code => Digest::MD5.hexdigest(Digest::SHA1.hexdigest(params["string_code"]))}
     end
 
     post '/md5_sha1' do
-      haml :md5_sha1_show, :locals => {:md5_sha1_code => Digest::MD5.hexdigest(Digest::SHA1.hexdigest(params["string_code"]))}
+      haml :md5_sha1_show, :locals => {:md5_sha1_code =>  Digest::SHA1.hexdigest(Digest::MD5.hexdigest(params["string_code"]))}
     end
 
   end
